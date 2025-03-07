@@ -1,0 +1,25 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Debugger" type="JUnit" factoryName="JUnit">
+    <module name="testing-automation-framework" />
+    <shortenClasspath name="MANIFEST" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="com.sauceLabs.testRunners.TestRunner" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <extension name="software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension">
+      <option name="credential" />
+      <option name="region" />
+      <option name="useCurrentConnection" value="false" />
+    </extension>
+    <option name="PACKAGE_NAME" value="com.sauceLabs.testRunners" />
+    <option name="MAIN_CLASS_NAME" value="" />
+    <option name="METHOD_NAME" value="" />
+    <option name="TEST_OBJECT" value="package" />
+    <option name="VM_PARAMETERS" value="-Denv=e2e -DReduceScreenshotSize=false -DConsoleLogs=true -Dcucumber.filter.tags=&quot;@AddProduct&quot;" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
