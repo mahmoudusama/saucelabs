@@ -28,6 +28,12 @@ public class loginPageStepDef extends BaseWebDriver {
             case "login":
                 loginPage.clickLogin();
                 break;
+            case "logout":
+                loginPage.clickLogout();
+                break;
+            case "menu-icon":
+                loginPage.clickMenuIcon();
+                break;
             default:
                 log.warn("Unknown button: {}", button);
                 break;

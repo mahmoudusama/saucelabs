@@ -13,15 +13,15 @@ public class LoginPage extends BaseWebDriver {
     private static final By errorMessage = By.tagName("h3");
     public static final By pageTitle = By.className("title");
     private final SeleUtils seleUtils = new SeleUtils();
-    private final JsonUtils jsonUtils = new JsonUtils();
+    private static final By menuIcon = By.id("react-burger-menu-btn");
+    private static final By logoutBtn = By.id("logout_sidebar_link");
+
+
 
     public boolean userOnLoginPage() {
         return seleUtils.isElementDisplayed(nameBox);
     }
 
-//    private String getJsonValue(String key) {
-//        return JsonUtils.ReadJson(key);
-//    }
 
     public void enterName() {
         String name = JsonUtils.ReadJson("name");
@@ -47,6 +47,15 @@ public class LoginPage extends BaseWebDriver {
     public void clickLogin() {
         seleUtils.clickOnElement(loginBtn);
     }
+
+    public void clickLogout() {
+        seleUtils.clickOnElement(logoutBtn);
+    }
+
+    public void clickMenuIcon() {
+        seleUtils.clickOnElement(menuIcon);
+    }
+
 
     public void errorMessage(String expectedMessage) {
         seleUtils.isElementDisplayed(errorMessage);

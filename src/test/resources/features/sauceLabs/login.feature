@@ -7,7 +7,7 @@ Feature: Login page validation for Sauce Labs Platform
     When user should be on the "login" page
 
   @loginPositive
-  Scenario Outline: Positive Scenario - Login to sauceLabs website with correct credentials
+  Scenario Outline: Login to sauceLabs website with correct credentials
     And user set the username: "<userName>"
     And user set the Password: "secret_sauce"
     Then user click on "Login" button
@@ -22,7 +22,7 @@ Feature: Login page validation for Sauce Labs Platform
       | visual_user             |
 
   @loginNegative
-  Scenario Outline: Negative Scenarios - Login with invalid credentials
+  Scenario Outline: Login with invalid credentials
     And user set the username: "<userName>"
     And user set the Password: "<passWord>"
     Then user click on "Login" button
@@ -36,3 +36,12 @@ Feature: Login page validation for Sauce Labs Platform
       |               | secret_sauce  | Epic sadface: Username is required                                        |
       | standard_user |               | Epic sadface: Password is required                                        |
       |               |               | Epic sadface: Username is required                                        |
+
+  @logout
+  Scenario: Logout from sauceLabs website
+    And user sets correct credentials for SauceLabs
+    And user should be on the "Products" page
+    Then user click on "Menu-Icon" button
+    And user click on "Logout" button
+    Then user is redirected to "Login" page
+
